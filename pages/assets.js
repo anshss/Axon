@@ -1,4 +1,5 @@
 import Moralis from "moralis";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Assets() {
@@ -16,6 +17,7 @@ export default function Assets() {
     });
     console.log(response);
   }
+  f;
 
   async function fetchNftsFromPolygon() {
     try {
@@ -56,7 +58,6 @@ export default function Assets() {
   }
 
   function click() {
-    initialize();
     fetchNftsFromPolygon();
   }
 
