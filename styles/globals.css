@@ -18,6 +18,9 @@ body{
 h4 {
   color: #EB018A;
 }
+button {
+  cursor:pointer
+}
 input,
 input[type="radio"] + label,
 input[type="checkbox"] + label:before,
