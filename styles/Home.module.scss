@@ -38,14 +38,22 @@ $accent-color: #EB018A;
     width:18vw;
 
     .wallet{
-      width:5rem;
+      display: flex;
+      flex-direction: row;
+      gap:.5rem;
+      min-width:6rem;
       color:white;
       font-weight:300;
       border: none;
       border-radius:10px;
-      padding:0.25rem 1rem;
+      padding:0.25rem .5rem;
       background: #383838;
 
+      .button{
+        background:transparent;
+        border:none;
+        color:white
+      }
       &:hover{
         cursor: pointer;
         background: #404040;

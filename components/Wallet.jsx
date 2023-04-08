@@ -49,7 +49,7 @@ export default function Wallet() {
             {/* {loggedEvm ? <button className={styles.wallet} >logout</button> : <button className={styles.wallet}>login</button>} */}
             <div className={styles.wallet}>
                 <img src="phantomLogo.png" height={32} width={32}/>
-                {loggedSol ? <button >logout</button> : <button onClick={logSolana}>login</button>}
+                {loggedSol ? <button className={styles.button}>logout</button> : <button className={styles.button} onClick={logSolana}>login</button>}
             </div>
         </div>
     )
