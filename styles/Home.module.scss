@@ -25,6 +25,9 @@ $accent-color: #EB018A;
 
   }
   .link{
+    font-size: 1.2rem;
+    margin-left:2rem;
+    margin-right:-5rem;
     text-decoration: none;
     color: white;
     &:hover{
@@ -36,12 +39,12 @@ $accent-color: #EB018A;
     display:flex; 
     flex-direction: row;
     justify-content: space-between;
-    width:18vw;
+    width:250px;
 
     .wallet{
       display: flex;
       flex-direction: row;
-      gap:.5rem;
+      gap:10px;
       min-width:6rem;
       color:white;
       font-weight:300;
@@ -73,7 +76,7 @@ margin-left:5rem;
 }
 
 .description{
-  font-size:0.8rem;
+  font-size:1rem;
 position:relative;
 top:-4.5rem;
 left:2.35rem;
@@ -92,7 +95,7 @@ left:2.35rem;
 }
 
 .card{
-  font-size:0.9rem;
+  font-size:.9rem;
   display:flex;
   flex-direction: column;
   width:230px;
@@ -107,7 +110,7 @@ left:2.35rem;
     
     gap:10px;
     .head{
-      color:#EB018A;
+      color:#f885c8;
     }
     .copy{
       background-color: rgba(0, 0, 0, 0.2);
@@ -130,8 +133,8 @@ left:2.35rem;
   }
   .landingDesc{
     position:relative;
-    font-size:1.3rem;
-    top:-15rem;
+    font-size:1.5rem;
+    top:-17rem;
   }
   .timeline{
     position:absolute;
@@ -140,18 +143,21 @@ left:2.35rem;
     height:1800px;
   }
   .main{
-    margin-top:130px;
+    margin-top:80px;
     display:flex;
     flex-direction:row;
     justify-content : space-evenly;
     width:100%;
+    .text{
+      line-height:1.3
+    }
     .section{
       display: flex;
       flex-direction: column;
       gap:4rem;
       width:30%;
-      height: 1600px;
-
+      height: 1700px;
+      font-size: 1.3rem;
     }
     .left{
       justify-content: center;
@@ -163,7 +169,7 @@ left:2.35rem;
       }
     }
     .right{
-      height: 1290px;
+      height: 1380px;
       justify-content: space-between;
     }
     .top{

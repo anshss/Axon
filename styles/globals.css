@@ -12,14 +12,20 @@ body{
   background: linear-gradient(90deg, rgba(148, 11, 125, 1.00) 0.0%, rgba(58, 22, 112, 1.00) 77.3%, rgba(53, 23, 111, 1.00) 100.0%);
 }
 *{
+  
   font-family: 'Work Sans', sans-serif;
 }
 
 h4 {
+  font-size:1.3rem;
   color: #EB018A;
 }
 button {
-  cursor:pointer
+  cursor:pointer;
+}
+
+input,input::placeholder {
+  font: 16px/3 sans-serif;
 }
 input,
 input[type="radio"] + label,
@@ -106,7 +112,6 @@ input[type="checkbox"] + label:after {
   font-size: 0.8em;
   color: #fff;
   opacity: 0;
-  font-family: FontAwesome;
   content: "\f00c";
 }
 input:checked + label:after {
