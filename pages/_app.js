@@ -7,7 +7,6 @@ import {
 } from 'wagmi';
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { ConnectKitProvider } from 'connectkit';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 
@@ -64,12 +63,6 @@ const sepolia = {
         chains,
         options: {
           appName: 'ThePeerDao',
-        },
-      }),
-      new WalletConnectConnector({
-        chains,
-        options: {
-          qrcode: true,
         },
       }),
     ],

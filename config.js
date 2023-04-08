@@ -1,4 +1,4 @@
-export const addressBridgePolygon = "0xe64B8340FB22ACAf5507194CFE268f9F49f5BE15";
+export const addressBridgePolygon = "0x8273C8850DcA54CccEdC1881D9952b3D9fdff09D";
 export const addressBridgeEth = "0x7e710C8e03bc5D6cFe4E45C3587Be40767E49F77";
 
 export const abiBridgePolygon = [
@@ -28,6 +28,19 @@ export const abiBridgePolygon = [
 		"type": "event"
 	},
 	{
+		"inputs": [],
+		"name": "NftBurned",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -42,6 +55,40 @@ export const abiBridgePolygon = [
 		],
 		"name": "burn",
 		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"name": "onERC721Received",
+		"outputs": [
+			{
+				"internalType": "bytes4",
+				"name": "",
+				"type": "bytes4"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}

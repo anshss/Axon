@@ -8,8 +8,6 @@ export default function Assets() {
     const [nftsPolygon, setPolygonNfts] = useState([])
     const [nftsEth, setEthNfts] = useState([])
 
-    useEffect(() => { }, [])
-
 
     async function initialize() {
         const response = await Moralis.start({
@@ -59,8 +57,9 @@ export default function Assets() {
     }
 
 
-    function click() {
-        fetchNftsFromPolygon()
+    async function click() {
+        await initialize()
+        await fetchNftsFromPolygon()
     }
 
     function NftCard(prop) {
