@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react"
-import styles from "../styles/Home.module.scss"
 import { ConnectKitButton } from "connectkit";
+import { useEffect, useState } from "react";
+import styles from "../styles/Home.module.scss";
+import Image from "next/image";
+
 
 export default function Wallet() {
     const [loggedEvm, setLoggedEvm] = useState(false)
@@ -38,10 +40,17 @@ export default function Wallet() {
     }
 
     return (
-        <div>
-            <ConnectKitButton />
+        <div className={styles.walletConnect}>
+            <ConnectKitButton 
+            customTheme={{
+          "--ck-accent-color": "#ffffff1a",
+          "--ck-accent-text-color": "#ffffff",
+        }}/>
             {/* {loggedEvm ? <button className={styles.wallet} >logout</button> : <button className={styles.wallet}>login</button>} */}
-            {loggedSol ? <button className={styles.wallet} >logout</button> : <button className={styles.wallet} onClick={logSolana}>login</button>}
+            <div className={styles.wallet}>
+                <img src="phantomLogo.png" height={32} width={32}/>
+                {loggedSol ? <button >logout</button> : <button onClick={logSolana}>login</button>}
+            </div>
         </div>
     )
 }
