@@ -4,6 +4,7 @@ $font-main: 'Work Sans', sans-serif;
 $font-style: 'Staatliches', cursive;
 $accent-color: #EB018A;
 
+// ---------------------------------------------------------------- navbar component
 .navbar{
   display: flex;
   flex-direction: row;
@@ -64,7 +65,7 @@ $accent-color: #EB018A;
 }
 
 
-
+//  ----------------------------------------------------------------dashboard and assets page
 
 .heading{
 margin:0 5rem;
@@ -114,4 +115,71 @@ left:2.35rem;
     }
 
 }
+}
+
+//---------------------------------------------------------------- home page
+
+.home{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  .landingimg{
+    width:90%;
+    height:100vh;
+  }
+  .landingDesc{
+    position:relative;
+    font-size:1.3rem;
+    top:-15rem;
+  }
+  .timeline{
+    position:absolute;
+    top:100vh;
+    width:640px;
+    height:1800px;
+  }
+  .main{
+    margin-top:130px;
+    display:flex;
+    flex-direction:row;
+    justify-content : space-evenly;
+    width:100%;
+    .section{
+      display: flex;
+      flex-direction: column;
+      gap:4rem;
+      width:30%;
+      height: 1600px;
+
+    }
+    .left{
+      justify-content: center;
+      padding-bottom:25rem;
+      
+      .text{
+        padding-right:-10rem;
+        text-align: right;
+      }
+    }
+    .right{
+      height: 1290px;
+      justify-content: space-between;
+    }
+    .top{
+      display:flex;
+      flex-direction: column;
+      gap:4rem;
+    }
+    .bottom{
+      display:flex;
+      flex-direction: column;
+      gap:4rem;
+    }
+    
+  }
+  .text{
+    position:relative;
+    top:0;
+  }
 }
