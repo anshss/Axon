@@ -7,6 +7,17 @@ import web3modal from 'web3modal'
 import { ethers } from 'ethers'
 import { useRouter } from "next/router";
 
+// import { createMint } from '@solana/spl-token';
+// import { clusterApiUrl, Connection, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
+
+// import { Connection, PublicKey, Keypair } from "@solana/web3.js"
+// import { Metadata, Metaplex } from "@metaplex/js"
+// import bs58 from 'bs58'
+
+import web3 from '@solana/web3.js'
+import splToken from '@solana/spl-token'
+
+
 export default function App() {
 
 
@@ -15,6 +26,7 @@ export default function App() {
         tokId: "",
         chain: "Polygon"
     })
+    const [uri, setUri] = useState()
 
     const router = useRouter()
 
@@ -51,7 +63,9 @@ export default function App() {
             signer,
         )
         const approve = await nftContract.approve(addressBridgePolygon, formInput.tokId)
-        await approve.wait()
+
+        const getUri = await nftContract.tokenURI(formInput.tokId)
+        setUri(getUri)
 
         const bridgeContract = new ethers.Contract(
             addressBridgePolygon,
@@ -60,6 +74,7 @@ export default function App() {
         )
         const txn = await bridgeContract.burn(formInput.contAddr, formInput.tokId)
 
+        await approve.wait()
         await txn.wait()
         await mintSolana()
         router.push('/dashboard')
@@ -67,9 +82,40 @@ export default function App() {
 
     async function mintSolana() { }
 
+    
+
+    async function testSolana() {
+        // Connect to the Solana network
+        const connection = new web3.Connection(web3.clusterApiUrl('devnet'));
+
+
+        // Address of the token mint account
+        const mintAddress = new web3.PublicKey('FHMTT1TZjB2NLKXkvyw3KwiUqK1K38NhC7PSTYSYRQGC');
+
+        // Address of the account that will receive the NFT
+        const destinationAddress = new web3.PublicKey('FHMTT1TZjB2NLKXkvyw3KwiUqK1K38NhC7PSTYSYRQGC');
+
+        // Create a new token mint
+        const token = await splToken.Token.createMint(
+            connection,
+            // Your account's private key
+            new web3.Account('3mPv4XzAdohnbL3ZSc6qTA8JSeTE6aEAn88cCS7GD4Zq41ch7JVFgaBXx7ff3HPwNadDi22VCcEjNeeZq5mxwEta').secretKey,
+            mintAddress,
+            null,
+            0,
+            splToken.TOKEN_PROGRAM_ID
+        );
+
+        // Mint a new NFT and transfer it to the destination account
+        const nft = await token.createToken(destinationAddress);
+
+        console.log(`Successfully minted NFT with ID ${nft}`);
+    }
+
 
     function click() {
-        console.log(formInput)
+        testSolana()
+        console.log('clicked')
     }
 
 
@@ -135,7 +181,7 @@ export default function App() {
                         </label>
                     </div>
                 </div>
-                <button class={styles.button5} role="button" onClick={bridgeNft}>
+                <button className={styles.button5} role="button" onClick={bridgeNft}>
                     Bridge
                 </button>
 
