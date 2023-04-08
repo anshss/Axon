@@ -1,9 +1,12 @@
 import Moralis from "moralis";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import NFT from "../components/NFT";
+import styles from "../styles/Home.module.scss";
+import assets from "../public/assets.svg";
+import Image from "next/image";
 
 export default function Assets() {
-  const [userAddress, setUserAddress] = useState(
+  const [userAddrss, setUserAddress] = useState(
     "0x48e6a467852Fa29710AaaCDB275F85db4Fa420eB"
   );
   const [nftsPolygon, setPolygonNfts] = useState([]);
@@ -17,7 +20,6 @@ export default function Assets() {
     });
     console.log(response);
   }
-  f;
 
   async function fetchNftsFromPolygon() {
     try {
@@ -58,33 +60,41 @@ export default function Assets() {
   }
 
   function click() {
+    initialize();
     fetchNftsFromPolygon();
   }
 
-  function NftCard(prop) {
-    return (
-      <div>
-        <img src={prop?.tokenUri} width="50px" height="50px" />
-        <p>tokenId: {prop.tokenId}</p>
-        <p>tokenAddresses: {prop.tokenAddresses}</p>
-      </div>
-    );
-  }
+  //   function NftCard(prop) {
+  //     return (
+  //       <div>
+  //         <img src={prop?.tokenUri} width="50px" height="50px" />
+  //         <p>tokenId: {prop.tokenId}</p>
+  //         <p>tokenAddresses: {prop.tokenAddresses}</p>
+  //       </div>
+  //     );
+  //   }
 
   return (
     <div>
-      <p>Assets</p>
-      <div>
-        {nftsPolygon?.map((nft, i) => (
-          <NftCard
-            key={i}
-            tokenAddresses={nft.token_address}
-            tokenId={nft.token_id}
-            tokenUri={nft.token_uri}
-          />
-        ))}
-      </div>
       <button onClick={click}>click</button>
+      <div className={styles.assets}>
+        <div className={styles.heading}>
+          <Image src={assets} height={200} width={250} />
+          <div className={styles.description}>
+            Here you can access your Bridged NFTs
+          </div>
+        </div>
+        <div className={styles.nftcontainer}>
+          {nftsPolygon?.map((nft, i) => (
+            <NFT
+              key={i}
+              tokenAddresses={nft.token_address}
+              tokenId={nft.token_id}
+              tokenUri={nft.token_uri}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

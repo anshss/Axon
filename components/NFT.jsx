@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from "../styles/Home.module.scss"
-import Image from 'next/image'
-import naruto from "../public/Naruto.jpg"
-export default function NFT() {
+export default function NFT(prop) {
   return (
     <div className={styles.card}>
-      <Image src={naruto} width={230}/>
+      <img src={prop?.tokenUri} width={230} height={230}/>
       <div className={styles.nftdesc}>
-        <div className={styles.token}><span className={styles.head}>TokenId: </span>something230948</div>
-        <div className={styles.add}><span className={styles.head}>Contract: </span>02s0x58wwsetw</div>
+        <div className={styles.token}><span className={styles.head}>TokenId: </span>{prop.tokenId}</div>
+        <div className={styles.add}><span className={styles.head}>Address: </span>{prop.tokenAddresses.slice(0,6)}...<span className={styles.copy}><button onClick={() => {navigator.clipboard.writeText(prop.tokenAddresses)}}>copy</button></span></div>
       </div>
     </div>
   )

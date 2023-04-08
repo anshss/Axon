@@ -65,49 +65,53 @@ $accent-color: #EB018A;
 
 
 
-.dashboard{
 
-  .heading{
-  margin:0 5rem;
-  margin-left:5rem;
-  }
+.heading{
+margin:0 5rem;
+margin-left:5rem;
+}
 
-  .description{
-    font-size:0.8rem;
-  position:relative;
-  top:-4.5rem;
-  left:2.35rem;
-  }
+.description{
+  font-size:0.8rem;
+position:relative;
+top:-4.5rem;
+left:2.35rem;
+}
 
-  .nftcontainer{
-    width:82%;
-    margin:auto;
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    gap:2rem;
-     
-    .card{
-      font-size:0.9rem;
-      display:flex;
-      flex-direction: column;
-      width:230px;
-      height: 280px;
-      background: rgba(0, 0, 0, 0.2);
+.nftcontainer{
+  width:82%;
+  margin:auto;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap:2rem;
+   
+}
 
-      .nftdesc{
-        padding:10px;
-        margin-top:9px;
-        display: flex;
-        flex-direction: column;
-        
-        gap:10px;
-        .head{
-          color:#EB018A;
-      }
+.card{
+  font-size:0.9rem;
+  display:flex;
+  flex-direction: column;
+  width:230px;
+  height: 280px;
+  background: rgba(0, 0, 0, 0.2);
+
+  .nftdesc{
+    padding:10px;
+    margin-top:9px;
+    display: flex;
+    flex-direction: column;
+    
+    gap:10px;
+    .head{
+      color:#EB018A;
     }
+    .copy{
+      background-color: rgba(0, 0, 0, 0.2);
+      margin-left: 2rem;
     }
-  }
+
+}
 }
