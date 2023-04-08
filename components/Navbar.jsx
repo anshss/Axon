@@ -1,23 +1,16 @@
 import Link from "next/link";
 import Wallet from "./wallet";
+import styles from "../styles/Home.module.scss"
 
 export default function Navbar() {
 
-    const styles = {
-        container: {
-            backgroundColor: 'black',
-            color: 'white',
-            display: 'flex',
-            justifyContent: 'space-around'
-        },
-    };
 
     return (
-        <div style={styles.container}>
-            <Link href="/"><p>Axon</p></Link>
-            <Link href="/assets"><p>Assets</p></Link>
-            <Link href="/bridge"><p>Bridge</p></Link>
-            <Link href="/dashboard"><p>Dashboard</p></Link>
+        <div className={styles.navbar}>
+            <Link className={styles.link} href="/"><p >Axon</p></Link>
+            <Link className={styles.link} href="/assets"><p >Assets</p></Link>
+            <Link className={styles.link} href="/bridge"><p >Bridge</p></Link>
+            <Link className={styles.link} href="/dashboard"><p >Dashboard</p></Link>
             <Wallet />
         </div>
     )
