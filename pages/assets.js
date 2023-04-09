@@ -6,29 +6,45 @@ import assets from "../public/assets.svg";
 import Image from "next/image";
 
 export default function Assets() {
-  const [userAddrss, setUserAddress] = useState(
-    "0x48e6a467852Fa29710AaaCDB275F85db4Fa420eB"
+  const [userAddr, setUserAddress] = useState(
+    "0xc8bF6c8053e093D6e25FCd8cad17c8417Db4D4A5"
   );
   const [nftsPolygon, setPolygonNfts] = useState([]);
   const [nftsEth, setEthNfts] = useState([]);
+  const [chain, setChain] = useState()
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetchChain()
+  }, []);
 
-  async function initialize() {
-    const response = await Moralis.start({
-      apiKey: process.env.NEXT_PUBLIC_MORALIS_KEY,
-    });
-    console.log(response);
+  useEffect(() => {
+    if (chain == 0x13881) {
+      fetchNftsFromPolygon()
+    }
+    else {
+      fetchNftsFromEvm()
+    }
+  }, [chain])
+
+  async function fetchChain() {
+    const currentChain = await window.ethereum.request({method: 'eth_chainId'})
+    setChain(currentChain)
   }
 
   async function fetchNftsFromPolygon() {
     try {
+      if (!Moralis.Core.isStarted) {
+        await Moralis.start({
+          apiKey: process.env.NEXT_PUBLIC_MORALIS_KEY,
+        });
+      }
+
       const response = await Moralis.EvmApi.nft.getWalletNFTs({
         chain: "0x13881",
         format: "decimal",
         tokenAddresses: [],
         mediaItems: false,
-        address: "0x48e6a467852Fa29710AaaCDB275F85db4Fa420eB",
+        address: userAddr,
       });
 
       setPolygonNfts(response.raw.result);
@@ -40,16 +56,18 @@ export default function Assets() {
 
   async function fetchNftsFromEvm() {
     try {
-      await Moralis.start({
-        apiKey: process.env.NEXT_PUBLIC_MORALIS_KEY,
-      });
+      if (!Moralis.Core.isStarted) {
+        await Moralis.start({
+          apiKey: process.env.NEXT_PUBLIC_MORALIS_KEY,
+        });
+      }
 
       const response = await Moralis.EvmApi.nft.getWalletNFTs({
         chain: "11155111",
         format: "decimal",
         tokenAddresses: [],
         mediaItems: false,
-        address: userAddress,
+        address: userAddr,
       });
 
       setEthNfts(response.raw.result);
@@ -60,23 +78,13 @@ export default function Assets() {
   }
 
   function click() {
-    initialize();
-    fetchNftsFromPolygon();
+    console.log(chain)
   }
 
-  //   function NftCard(prop) {
-  //     return (
-  //       <div>
-  //         <img src={prop?.tokenUri} width="50px" height="50px" />
-  //         <p>tokenId: {prop.tokenId}</p>
-  //         <p>tokenAddresses: {prop.tokenAddresses}</p>
-  //       </div>
-  //     );
-  //   }
 
   return (
     <div>
-      <button onClick={click}>click</button>
+      {/* <button onClick={click}>click</button> */}
       <div className={styles.assets}>
         <div className={styles.heading}>
           <Image src={assets} height={200} width={250} />
