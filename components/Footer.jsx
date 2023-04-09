@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import styles from './Footer.module.scss';
-import {FaGithub,FaInstagram,FaLinkedin, FaTwitter,} from "react-icons/fa"
-import ashish from "../public/ashishProfile.png"
-import ansh from "../public/anshProfile.jpg"
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, } from "react-icons/fa";
+import ansh from "../public/anshProfile.jpg";
+import ashish from "../public/ashishProfile.png";
+import styles from './Footer.module.scss';
 
 
 const style = {display: "inline-block",
@@ -38,16 +38,17 @@ ashish-chaudhary-118181229"><FaLinkedin style={style}/></Link>
           </div>
 
           <div className={styles.footerCol}>
-          <div >
-              <Image className={styles.images} width={100} height={100} src={ansh}/>
+            <Image className={styles.images} width={100} height={100} src={ansh}/>
+            <div >
               <h4 className={styles.h4}>Ansh Saxena</h4>
               <div className={styles.post}>Solidity/Blockchain Developer</div>
-            </div>
             <div className={styles.socialLinks}>
               <Link href="https://github.com/anshss"><FaGithub style={style}/></Link>
               <Link href="https://www.linkedin.com/in/anshss/"><FaLinkedin style={style}/></Link>
               <Link href="https://twitter.com/anshstwt"><FaTwitter style={style}/></Link>
               <Link href="#"><FaInstagram style={style}/></Link>
+            </div>
+            
             </div>
           </div>
         </div>
