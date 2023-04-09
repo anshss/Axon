@@ -4,8 +4,6 @@ import NFT from "../components/NFT";
 import styles from "../styles/Home.module.scss";
 import assets from "../public/assets.svg";
 import Image from "next/image";
-import axios from 'axios';
-
 
 export default function Assets() {
 	const [userAddr, setUserAddr] = useState();
@@ -84,28 +82,7 @@ export default function Assets() {
 	}
 
 
-	function test() {
-
-		const options = {
-			method: 'POST',
-			url: 'https://api.verbwire.com/v1/nft/mint/quickMintFromMetadataUrl',
-			headers: {
-				accept: 'application/json',
-				'content-type': 'multipart/form-data; boundary=---011000010111000001101001',
-				'X-API-Key': 'sk_live_6283e3c3-6990-4d72-9c08-85859e201676'
-			},
-			data: '-----011000010111000001101001\r\nContent-Disposition: form-data; name="allowPlatformToOperateToken"\r\n\r\ntrue\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="chain"\r\n\r\nmumbai\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="metadataUrl"\r\n\r\nhttps://ipfs.io/ipfs/bafybeiczzaokuu6hq4yox35plelmn4soc4tlho2noz7cmh2iyib5nkxyxa/giphy%20(1).gif\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="recipientAddress"\r\n\r\n0xc8bF6c8053e093D6e25FCd8cad17c8417Db4D4A5\r\n-----011000010111000001101001--\r\n\r\n'
-		};
-
-		axios
-			.request(options)
-			.then(function (response) {
-				console.log(response.data);
-			})
-			.catch(function (error) {
-				console.error(error);
-			});
-	}
+	
 
 	function click() {
 		test()
@@ -114,7 +91,7 @@ export default function Assets() {
 
 	return (
 		<div>
-			<button onClick={click}>click</button>
+			{/* <button onClick={click}>click</button> */}
 			<div className={styles.assets}>
 				<div className={styles.heading}>
 					<Image src={assets} height={200} width={250} />

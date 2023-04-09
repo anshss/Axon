@@ -6,6 +6,7 @@ import Fade from "react-reveal/Fade";
 
 import Timeline from "../public/Timeline.svg";
 import styles from "../styles/Home.module.scss";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

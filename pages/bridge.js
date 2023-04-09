@@ -1,6 +1,6 @@
 import { useState } from "react";
 import bridge from "../public/bridge.svg";
-import styles from "./bridge.module.scss";
+import styles from "../styles/bridge.module.scss";
 import Image from "next/image";
 import { addressBridgePolygon, addressBridgeEth, abiBridgePolygon, abiBridgeEth } from "../config"
 import web3modal from 'web3modal'
