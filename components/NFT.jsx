@@ -5,7 +5,7 @@ export default function NFT(prop) {
 
  
         const uri = prop.tokenUri;
-        const trimUri = uri.slice(28)
+        const trimUri = uri?.slice(28)
         const newUri = "https://ipfs.io" + trimUri
         console.log(newUri)
    

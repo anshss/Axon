@@ -14,6 +14,7 @@ export default function Navbar() {
             <Link className={styles.link} href="/assets"><p >Assets</p></Link>
             <Link className={styles.link} href="/bridge"><p >Bridge</p></Link>
             <Link className={styles.link} href="/dashboard"><p >Dashboard</p></Link>
+            <Link className={styles.link} href="/Mint"><p >Mint</p></Link>
             </div>
             <Wallet/>
         </div>  

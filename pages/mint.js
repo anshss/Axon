@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -45,3 +46,10 @@ export default function Mint() {
         </div>
     )
 }
+=======
+import React from "react";
+import styles from "";
+export default function mint() {
+  return <div>mint</div>;
+}
+>>>>>>> b7eb394f6ad1ac6627e0298e6bd4ab5962fc837a

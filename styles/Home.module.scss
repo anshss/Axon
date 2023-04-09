@@ -39,7 +39,7 @@ $accent-color: #EB018A;
     display:flex; 
     flex-direction: row;
     justify-content: space-between;
-    width:250px;
+    width:270px;
 
     .wallet{
       display: flex;
@@ -70,6 +70,9 @@ $accent-color: #EB018A;
 
 //  ----------------------------------------------------------------dashboard and assets page
 
+.assets,.dashboard{
+  min-height:100vh;
+}
 .heading{
 margin:0 5rem;
 margin-left:5rem;
@@ -87,7 +90,7 @@ left:2.35rem;
   margin:auto;
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-auto-rows: 50px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap:2rem;
