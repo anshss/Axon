@@ -12,7 +12,7 @@ export default function NFT(prop) {
 
     return (
         <div className={styles.card}>
-            <img src={newUri} width={230} height={230} />
+            <img src={newUri} width={230} height={200} />
             <div className={styles.nftdesc}>
                 <div className={styles.token}>
                     <span className={styles.head}>TokenId: </span>{prop.tokenId}

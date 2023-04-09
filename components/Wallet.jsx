@@ -36,6 +36,7 @@ export default function Wallet() {
             const response = await solana.connect()
             console.log('Connected with Public Key: ', response.publicKey.toString())
             setSolanaAddress(response.publicKey.toString())
+            setLoggedSol(true)
         }
     }
 

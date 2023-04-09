@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import styles from "../styles/Home.module.scss";
 
 export default function Mint() {
 
@@ -40,16 +40,9 @@ export default function Mint() {
 	}
 
     return(
-        <div>
+        <div className={styles.mint}>
             <p>TransactionId {status}</p>
-            <button onClick={mint}>QuickMint</button>
+            <button className={styles.btn} onClick={mint}>QuickMint</button>
         </div>
     )
 }
-=======
-import React from "react";
-import styles from "";
-export default function mint() {
-  return <div>mint</div>;
-}
->>>>>>> b7eb394f6ad1ac6627e0298e6bd4ab5962fc837a
