@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function Dashboard() {
 
-  const [nfts, setNfts] = useState([{ token_address: "0xdsdsadd", token_uri: "", token_id: "43" }, { token_address: "0xdsdsadd", token_uri: "", token_id: "43" }, { token_address: "0xdsdsadd", token_uri: "", token_id: "43" }])
+  const [nfts, setNfts] = useState([{ token_address: "5HajRi68K8r8F4CevCJG6sNqdKaRNHHXFs7SLyvfEqcn", token_uri: "https://ipfs.moralis.io:2053/ipfs/bafybeiczzaokuu6hq4yox35plelmn4soc4tlho2noz7cmh2iyib5nkxyxa/giphy%20(1).gif", token_id: "1" }])
 
   return (
     <div className={styles.dashboard}>
